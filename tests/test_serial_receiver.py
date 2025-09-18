@@ -1,8 +1,8 @@
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parents[1] / "raspberry-pi"))
+"""Tests for alert cooldown function."""
 
-from thingspeak_uploader import should_send_alert
+from raspberry_pi import thingspeak_uploader as tu
+
 
 def test_should_send_alert_callable():
-    assert callable(should_send_alert)
+    """Ensure the should_send_alert function exists and is callable."""
+    assert callable(getattr(tu, "should_send_alert", None))
