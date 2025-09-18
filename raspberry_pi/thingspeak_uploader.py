@@ -6,13 +6,15 @@ Reads JSON lines from serial (Arduino) and:
  - posts to ThingSpeak
  - logs to CSV
  - sends email alerts with cooldown
+
+This module is import-safe for unit tests: it does NOT import `serial`
+at module import time. The `serial` import happens only inside main().
 """
 
 import os
 import time
 import json
 import csv
-import serial
 import requests
 import smtplib
 from email.message import EmailMessage
@@ -184,7 +186,18 @@ def check_alerts(payload):
 
 
 def main():
-    """Main loop: read serial, parse, log, upload, and alert."""
+    """
+    Main loop: read serial, parse, log, upload, and alert.
+
+    Note: `serial` is imported here to keep module import-time safe for tests.
+    """
+    # Import serial only when running, to avoid ImportError at import-time.
+    try:
+        import serial  # type: ignore
+    except Exception as e:  # pragma: no cover - runtime environment may differ
+        print("pyserial not available:", e)
+        raise
+
     ensure_csv()
     print("Opening serial", SERIAL_PORT)
     ser = serial.Serial(SERIAL_PORT, BAUDRATE, timeout=2)
