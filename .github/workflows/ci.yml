@@ -11,15 +11,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - name: Install dependencies
+
+      - name: Install system dependencies
         run: |
           python -m pip install --upgrade pip
+
+      - name: Install Python dependencies
+        run: |
+          # Install test & lint tools
           pip install pytest flake8
+          # Install runtime requirements for uploader (update path if needed)
+          if [ -f raspberry_pi/requirements.txt ]; then pip install -r raspberry_pi/requirements.txt; fi
+
       - name: Run flake8
-        run: flake8 .
+        run: |
+          flake8 .
+
       - name: Run tests
-        run: pytest -q
+        run: |
+          pytest -q
