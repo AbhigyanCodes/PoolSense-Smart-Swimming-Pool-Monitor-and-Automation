@@ -1,18 +1,20 @@
-# Swimming Pool Control & Monitoring System (SPCMS)
+# Swimming Pool Control & Monitoring System (PoolSense / SPCMS)
 
 ![cover](images/cover.png)
 
 **IoT system** for automatic water-level & temperature regulation, cloud logging (ThingSpeak), and immediate alerts (email + buzzer) for turbidity, chlorine, humidity, and sensor failure.
 
-<!-- Replace OWNER and REPO below with your GitHub username and repository name -->
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 [![Python](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)]()
+[![Build Status](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/actions/workflows/ci.yml/badge.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/actions/workflows/ci.yml)
+[![Issues](https://img.shields.io/github/issues/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/issues)
+[![Stars](https://img.shields.io/github/stars/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/stargazers)
 
 ---
 
 ## Quick overview
 
-- **Deploy mode A (recommended):** ESP32 device posts sensor data directly to ThingSpeak, controls pumps & buzzer locally.
+- **Deploy mode A (recommended):** ESP32 posts sensor data directly to ThingSpeak, controls pumps & buzzer locally.
 - **Deploy mode B:** Arduino reads sensors & controls pumps/buzzer locally and prints JSON over serial → Raspberry Pi gateway uploads to ThingSpeak, logs CSV, and sends email alerts.
 - Data fields, conversions, and thresholds are centrally documented in `docs/THINGSPEAK_FIELD_MAP.md` and `docs/design-notes.md`.
 
@@ -39,7 +41,7 @@
 1. Upload `firmware/controller_arduino/controller_serial.ino` to your Arduino (install `DHT`, `OneWire`, `DallasTemperature`).
 2. On Raspberry Pi:
    ```bash
-   cd raspberry-pi
+   cd raspberry_pi
    cp .env.example .env
    # Edit .env and fill SERIAL_PORT, THINGSPEAK_API_KEY, EMAIL_* etc.
    python3 -m venv venv
@@ -70,7 +72,7 @@ field8 = batteryVoltage (optional)
 ```
 swimming-pool-iot/
 ├─ firmware/                 # Arduino/ESP sketches (controller_esp32, controller_arduino, sensors)
-├─ raspberry-pi/             # Pi uploader, .env.example, requirements.txt
+├─ raspberry_pi/             # Pi uploader, .env.example, requirements.txt
 ├─ docs/                     # report, mapping, wiring
 ├─ hardware/                 # BOM, schematics, photos
 ├─ server/                   # optional Flask ingest endpoint
@@ -115,9 +117,3 @@ This repository uses the **MIT License** — see `LICENSE` for details.
 If you need help setting up hardware or calibrating sensors, create an issue with hardware details and serial logs (attach `logs/sensor_log.csv` sample). Happy to help!
 
 ---
-
-<!--
-HOW TO USE:
-- Replace `OWNER` and `REPO` in the badge URLs with your GitHub username and repository name to enable the CI, issues and stars badges.
-- Paste this Markdown into your top-level README.md.
--->
