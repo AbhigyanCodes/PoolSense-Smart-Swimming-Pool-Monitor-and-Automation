@@ -205,3 +205,37 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arduino / ESP build artefacts
+/build/
+*.elf
+*.bin
+*.hex
+*.map
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local env & secrets
+.env
+secrets.h
+secrets.h.*
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Misc
+.coverage
+htmlcov/
