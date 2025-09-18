@@ -1,0 +1,12 @@
+Part,Qty,Notes
+ESP32 Dev Kit,1,Recommended for Wi-Fi deployments
+Arduino Uno/Nano,1,Alternate board for non-WiFi option
+DHT22,1,Temperature & humidity sensor
+DS18B20,1,Water temperature sensor (1-wire)
+pH sensor kit,1,Analog pH probe + amplifier
+Turbidity sensor kit,1,Analog turbidity probe
+Chlorine sensor kit,1,Analog chlorine/ORP sensor
+Relay module (2-4ch),1,For pump control (use opto/isolated)
+Active buzzer,1,
+Wires & connectors,As needed,
+Power supply 12V,1,For pumps (separate)
