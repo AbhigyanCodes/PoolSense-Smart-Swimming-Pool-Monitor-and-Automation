@@ -1,4 +1,4 @@
-# Swimming Pool Control & Monitoring System (PoolSense / SPCMS)
+# PoolSense - Swimming Pool Control & Monitoring System
 
 ![cover](images/cover.png)
 
