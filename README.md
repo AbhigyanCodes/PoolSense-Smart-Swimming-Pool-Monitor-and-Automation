@@ -4,11 +4,12 @@
 
 **IoT system** for automatic water-level & temperature regulation, cloud logging (ThingSpeak), and immediate alerts (email + buzzer) for turbidity, chlorine, humidity, and sensor failure.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/tree/main?tab=MIT-1-ov-file)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/tree/main?tab=MIT-1-ov-file)
 [![Python](https://img.shields.io/badge/python-3.10%2B-brightgreen.svg)](https://www.python.org/downloads/)
 [![Build Status](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/actions/workflows/ci.yml/badge.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/actions/workflows/ci.yml)
 [![Issues](https://img.shields.io/github/issues/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/issues)
 [![Stars](https://img.shields.io/github/stars/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation/stargazers)
+[![Repo](https://img.shields.io/badge/github-AbhigyanCodes/PoolSense--Smart--Swimming--Pool--Monitor--and--Automation-blue.svg)](https://github.com/AbhigyanCodes/PoolSense-Smart-Swimming-Pool-Monitor-and-Automation)
 
 ---
 
